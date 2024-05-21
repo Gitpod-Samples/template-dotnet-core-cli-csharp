@@ -9,7 +9,17 @@ tasks:
       dotnet build
   - name: Run
     command: dotnet run
+  - init: |
+      docker-compose pull
+  - command: |
+      docker-compose up
+
+ports:
+  - port: 1433
+    onOpen: ignore
 
 vscode:
   extensions:
     - muhammad-sammy.csharp
+    - ms-azuretools.vscode-docker
+    - ms-dotnettools.vscode-dotnet-runtime

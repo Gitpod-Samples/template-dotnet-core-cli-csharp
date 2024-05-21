@@ -1,0 +1,18 @@
+
+version: '3.8'
+
+services:
+  mssql:
+    image: mcr.microsoft.com/mssql/server
+    container_name: mssql
+    
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: "password123!"
+    ports:
+      - 1433:1433
+    networks:
+      - mssql
+networks:
+  mssql:
+    driver: bridge
