@@ -7,6 +7,6 @@ namespace API.Data
     {
         public TestContext(DbContextOptions options) : base(options) {}
 
-        public DbSet<User> User { get; set; }
+        public required DbSet<User> User { get; set; }
     }
 }
